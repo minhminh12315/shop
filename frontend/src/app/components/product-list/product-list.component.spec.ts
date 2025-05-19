@@ -25,7 +25,6 @@ export class ProductListComponent implements OnInit {
       next: (data) => {
         this.products = data;
         this.loading = false;
-        console.log('Danh sách sản phẩm:', data);
       },
       error: (err) => {
         console.error('Lỗi khi lấy danh sách:', err);
