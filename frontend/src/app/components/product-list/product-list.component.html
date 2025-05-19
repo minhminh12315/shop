@@ -1,0 +1,9 @@
+<div>
+  <h2>Danh sách sản phẩm</h2>
+  <div *ngIf="loading">Đang tải...</div>
+  <ul *ngIf="!loading">
+    <li *ngFor="let p of products">
+      {{ p.id }} - {{ p.name }} 
+    </li>
+  </ul>
+</div>
