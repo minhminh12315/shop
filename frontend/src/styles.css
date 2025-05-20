@@ -42,11 +42,13 @@ p,
 button {
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 
 a {
     text-decoration: none;
     color: #242b47;
+    cursor: pointer;
 }
 
 ul {

@@ -1,10 +1,273 @@
-<div>
-  <h2>Danh sách sản phẩm</h2>
-  <div *ngIf="loading">Đang tải...</div>
-  <ul *ngIf="!loading">
-    <li *ngFor="let p of products">
-      {{ p.id }} - {{ p.name }} 
-      <a [routerLink]="['/product-detail', p.id]">Xem chi tiết</a>
-    </li>
-  </ul>
+<div class="mt-5 position-relative">
+  <div class="list-product-img-about">
+    <div class="list-product-img-about-content">ALL ITEMS</div>
+    <img src="assets/list-products.png" alt="" class="">
+  </div>
+  <div class="list-products-container container w-100 h-100">
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <!-- filter -->
+      <div class="filter-container sticky-top top-10 pt-4">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span>FILTER</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M6 1C5.37935 0.999675 4.77387 1.19186 4.26702 1.55006C3.76016 1.90826 3.37688 2.41484 3.17 3H0V5H3.17C3.3766 5.58553 3.75974 6.09257 4.2666 6.45121C4.77346 6.80985 5.37909 7.00245 6 7.00245C6.62091 7.00245 7.22654 6.80985 7.7334 6.45121C8.24026 6.09257 8.6234 5.58553 8.83 5H16V3H8.83C8.62312 2.41484 8.23984 1.90826 7.73298 1.55006C7.22613 1.19186 6.62065 0.999675 6 1ZM5 4C5 3.73478 5.10536 3.48043 5.29289 3.29289C5.48043 3.10536 5.73478 3 6 3C6.26522 3 6.51957 3.10536 6.70711 3.29289C6.89464 3.48043 7 3.73478 7 4C7 4.26522 6.89464 4.51957 6.70711 4.70711C6.51957 4.89464 6.26522 5 6 5C5.73478 5 5.48043 4.89464 5.29289 4.70711C5.10536 4.51957 5 4.26522 5 4ZM10 9C9.37935 8.99967 8.77387 9.19186 8.26702 9.55006C7.76016 9.90826 7.37688 10.4148 7.17 11H0V13H7.17C7.3766 13.5855 7.75974 14.0926 8.2666 14.4512C8.77346 14.8099 9.37909 15.0025 10 15.0025C10.6209 15.0025 11.2265 14.8099 11.7334 14.4512C12.2403 14.0926 12.6234 13.5855 12.83 13H16V11H12.83C12.6231 10.4148 12.2398 9.90826 11.733 9.55006C11.2261 9.19186 10.6207 8.99967 10 9ZM9 12C9 11.7348 9.10536 11.4804 9.29289 11.2929C9.48043 11.1054 9.73478 11 10 11C10.2652 11 10.5196 11.1054 10.7071 11.2929C10.8946 11.4804 11 11.7348 11 12C11 12.2652 10.8946 12.5196 10.7071 12.7071C10.5196 12.8946 10.2652 13 10 13C9.73478 13 9.48043 12.8946 9.29289 12.7071C9.10536 12.5196 9 12.2652 9 12Z"
+              fill="#E6E6E6" />
+          </svg>
+        </button>
+        <div class="offcanvas offcanvas-end" id="filterOffcanvas">
+          <div class="offcanvas-header ">
+            <div class="d-flex flex-row align-items-center justify-content-between w-100">
+              <div class="offcanvas-title">FILTER</div>
+              <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="offcanvas-body p-0">
+            <!-- filter -->
+            <div class="filter-wrapper">
+              <div class="fiter-wrapper-title">SORT BY</div>
+              <div class="row row-cols-2 w-100 g-2 px-2">
+                <div class="col">
+                  <button>Default</button>
+                </div>
+                <div class="col">
+                  <button>New</button>
+                </div>
+                <div class="col">
+                  <button>High Price</button>
+                </div>
+                <div class="col">
+                  <button>Low Price</button>
+                </div>
+              </div>
+            </div>
+            <!-- filter -->
+            <div class="filter-wrapper">
+              <div class="fiter-wrapper-title">CATEGORY</div>
+              <div class="row row-cols-2 w-100 g-2 px-2">
+                <div class="col">
+                  <button>Adidas</button>
+                </div>
+                <div class="col">
+                  <button>Nike</button>
+                </div>
+                <div class="col">
+                  <button>Balenciaga</button>
+                </div>
+                <div class="col">
+                  <button>Bape</button>
+                </div>
+                <div class="col">
+                  <button>Off-White</button>
+                </div>
+                <div class="col">
+                  <button>Gucci</button>
+                </div>
+                <div class="col">
+                  <button>Dior</button>
+                </div>
+                <div class="col">
+                  <button>Celine</button>
+                </div>
+                <div class="col">
+                  <button>Louis Vuitton</button>
+                </div>
+              </div>
+            </div>
+            <div class="button-group-container row row-cols-2 g-2 w-100 px-2">
+              <div class="col">
+                <button>CLEAR</button>
+              </div>
+              <div class="col">
+                <button class="btn-apply">APPLY</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- list products -->
+      <div class="mt-2 row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 gy-5 w-100">
+        <!-- product -->
+        <div class="col">
+          <div class="product-container">
+            <div class="prd-img-container">
+              <img src="assets/product_img.png" alt="">
+            </div>
+            <div class="prd-card-inf">
+              <div class="prd-info-wrapper">
+                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
+                <div class="prd-category">JACKET</div>
+              </div>
+              <div class="btn-price-container">
+                <button>ADD TO CART</button>
+                <div class="price">$7.200</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- product -->
+        <!-- product -->
+        <div class="col">
+          <div class="product-container">
+            <div class="prd-img-container">
+              <img src="assets/product_img.png" alt="">
+            </div>
+            <div class="prd-card-inf">
+              <div class="prd-info-wrapper">
+                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
+                <div class="prd-category">JACKET</div>
+              </div>
+              <div class="btn-price-container">
+                <button>ADD TO CART</button>
+                <div class="price">$7.200</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- product -->
+        <!-- product -->
+        <div class="col">
+          <div class="product-container">
+            <div class="prd-img-container">
+              <img src="assets/product_img.png" alt="">
+            </div>
+            <div class="prd-card-inf">
+              <div class="prd-info-wrapper">
+                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
+                <div class="prd-category">JACKET</div>
+              </div>
+              <div class="btn-price-container">
+                <button>ADD TO CART</button>
+                <div class="price">$7.200</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- product -->
+        <!-- product -->
+        <div class="col">
+          <div class="product-container">
+            <div class="prd-img-container">
+              <img src="assets/product_img.png" alt="">
+            </div>
+            <div class="prd-card-inf">
+              <div class="prd-info-wrapper">
+                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
+                <div class="prd-category">JACKET</div>
+              </div>
+              <div class="btn-price-container">
+                <button>ADD TO CART</button>
+                <div class="price">$7.200</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- product -->
+        <!-- product -->
+        <div class="col">
+          <div class="product-container">
+            <div class="prd-img-container">
+              <img src="assets/product_img.png" alt="">
+            </div>
+            <div class="prd-card-inf">
+              <div class="prd-info-wrapper">
+                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
+                <div class="prd-category">JACKET</div>
+              </div>
+              <div class="btn-price-container">
+                <button>ADD TO CART</button>
+                <div class="price">$7.200</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- product -->
+        <!-- product -->
+        <div class="col">
+          <div class="product-container">
+            <div class="prd-img-container">
+              <img src="assets/product_img.png" alt="">
+            </div>
+            <div class="prd-card-inf">
+              <div class="prd-info-wrapper">
+                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
+                <div class="prd-category">JACKET</div>
+              </div>
+              <div class="btn-price-container">
+                <button>ADD TO CART</button>
+                <div class="price">$7.200</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- product -->
+        <!-- product -->
+        <div class="col">
+          <div class="product-container">
+            <div class="prd-img-container">
+              <img src="assets/product_img.png" alt="">
+            </div>
+            <div class="prd-card-inf">
+              <div class="prd-info-wrapper">
+                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
+                <div class="prd-category">JACKET</div>
+              </div>
+              <div class="btn-price-container">
+                <button>ADD TO CART</button>
+                <div class="price">$7.200</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- product -->
+        <!-- product -->
+        <div class="col">
+          <div class="product-container">
+            <div class="prd-img-container">
+              <img src="assets/product_img.png" alt="">
+            </div>
+            <div class="prd-card-inf">
+              <div class="prd-info-wrapper">
+                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
+                <div class="prd-category">JACKET</div>
+              </div>
+              <div class="btn-price-container">
+                <button>ADD TO CART</button>
+                <div class="price">$7.200</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- product -->
+      </div>
+      <!-- pagination -->
+      <div class="pagination-container">
+        <!-- previous page -->
+        <button class="btn-prev-page">
+          <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="">
+            <path opacity="0.8"
+              d="M5.25 -0.00511746C5.31558 -0.00591663 5.38059 0.00701615 5.44087 0.0328493C5.50115 0.0586824 5.55536 0.0968447 5.6 0.144882C5.8 0.344882 5.8 0.654882 5.6 0.854882L1.45 5.00488L5.6 9.14488C5.8 9.34488 5.8 9.65488 5.6 9.85488C5.4 10.0549 5.09 10.0549 4.89 9.85488L0.400001 5.34488C0.200001 5.14488 0.200001 4.83488 0.400001 4.63488L4.9 0.144882C5 0.0448818 5.13 -0.00511747 5.25 -0.00511746Z"
+              fill="#282828" />
+          </svg>
+        </button>
+        <!-- pages -->
+        <div class="pages">
+          <button class="active"><span>1</span></button>
+          <button><span>2</span></button>
+          <button><span>3</span></button>
+          <button><span>4</span></button>
+          <button><span>5</span></button>
+        </div>
+        <!-- next page -->
+        <button class="btn-next-page">
+          <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="">
+            <path opacity="0.8"
+              d="M0.75 10.0051C0.684424 10.0059 0.619407 9.99298 0.559129 9.96715C0.498851 9.94132 0.444646 9.90316 0.4 9.85512C0.2 9.65512 0.2 9.34512 0.4 9.14512L4.55 4.99512L0.4 0.855117C0.2 0.655117 0.2 0.345117 0.4 0.145117C0.6 -0.0548828 0.91 -0.0548828 1.11 0.145117L5.6 4.65512C5.8 4.85512 5.8 5.16512 5.6 5.36512L1.1 9.85512C1 9.95512 0.87 10.0051 0.75 10.0051Z"
+              fill="#282828" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

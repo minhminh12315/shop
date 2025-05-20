@@ -18,21 +18,6 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.fetchProducts();
   }
 
-  fetchProducts(): void {
-    this.loading = true;
-    this.productService.getProducts().subscribe({
-      next: (data) => {
-        this.products = data;
-        console.log('Danh sách sản phẩm:', data);
-        this.loading = false;
-      },
-      error: (err) => {
-        console.error('Lỗi khi lấy danh sách:', err);
-        this.loading = false;
-      },
-    });
-  }
 }
