@@ -1,9 +1,21 @@
-<div class="container" *ngIf="product; else loadingTpl">
-    
-  <h2>{{ product.name }}</h2>
-  <p>Giá: {{ product.price }}</p>
+<div class="container" *ngIf="product">
+  <div class="row">
+    <div class="col-6">
+      <div class="card">
+        <img
+          src="/assets/anh_detail_1.jpg"
+          class="card-img-top"
+          alt="{{ product.name }}"
+        />
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="">
+          <h3 class="">{{ product.name }}</h3>
+            <!-- <p class="card-text">
+                {{ product.description }}
+            </p> -->
+      </div>
+    </div>
+  </div>
 </div>
-<ng-template #loadingTpl>
-  <p *ngIf="loading">Đang tải...</p>
-  <p *ngIf="!loading">Không tìm thấy sản phẩm.</p>
-</ng-template>
