@@ -8,6 +8,8 @@ export interface Product {
   id: number;
   name: string;
   price: number;
+  category: number;
+  category_name: string;
   images: Image[];
 }
 
@@ -47,5 +49,9 @@ export class ProductService {
 
   getProductById(id: number): Observable<Product> {
     return this.http.get<Product>(`${this.apiUrl}${id}/`);
+  }
+
+  getProductsByCategory(categoryId: number): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.apiUrl}?category=${categoryId}`);
   }
 }

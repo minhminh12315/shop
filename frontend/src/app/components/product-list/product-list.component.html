@@ -29,16 +29,22 @@
               <div class="fiter-wrapper-title">SORT BY</div>
               <div class="row row-cols-2 w-100 g-2 px-2">
                 <div class="col">
-                  <button>Default</button>
+                  <button type="button"
+                    (click)="chooseFilter('default')"
+                    [ngClass]="{'bg-dark text-light': selectedFilter === 'default'}">Default</button>
                 </div>
                 <div class="col">
                   <button>New</button>
                 </div>
                 <div class="col">
-                  <button>High Price</button>
+                  <button type="button"
+                    (click)="chooseFilter('desc')"
+                    [ngClass]="{'bg-dark text-light': selectedFilter === 'desc'}">High Price</button>
                 </div>
                 <div class="col">
-                  <button>Low Price</button>
+                  <button type="button"
+                    (click)="chooseFilter('asc')"
+                    [ngClass]="{'bg-dark text-light': selectedFilter === 'asc'}">Low Price</button>
                 </div>
               </div>
             </div>
@@ -46,41 +52,30 @@
             <div class="filter-wrapper">
               <div class="fiter-wrapper-title">CATEGORY</div>
               <div class="row row-cols-2 w-100 g-2 px-2">
-                <div class="col">
-                  <button>Adidas</button>
-                </div>
-                <div class="col">
-                  <button>Nike</button>
-                </div>
-                <div class="col">
-                  <button>Balenciaga</button>
-                </div>
-                <div class="col">
-                  <button>Bape</button>
-                </div>
-                <div class="col">
-                  <button>Off-White</button>
-                </div>
-                <div class="col">
-                  <button>Gucci</button>
-                </div>
-                <div class="col">
-                  <button>Dior</button>
-                </div>
-                <div class="col">
-                  <button>Celine</button>
-                </div>
-                <div class="col">
-                  <button>Louis Vuitton</button>
+                <div *ngFor="let c of categories" class="col">
+                  <button
+                    type="button"
+                    (click)="chooseCate(c.id)"
+                    [ngClass]="{'bg-dark text-light': selectedCategory === c.id}"
+                  >
+                    {{ c.name }}
+                  </button>                
                 </div>
               </div>
             </div>
             <div class="button-group-container row row-cols-2 g-2 w-100 px-2">
               <div class="col">
-                <button>CLEAR</button>
+                <button
+                  type="button"
+                  (click)="clearFilter()"
+                  >CLEAR</button>
               </div>
               <div class="col">
-                <button class="btn-apply">APPLY</button>
+                <button
+                  type="button"
+                  (click)="applyFilter()"
+                  class="btn-apply">
+                  APPLY</button>
               </div>
             </div>
           </div>
@@ -89,157 +84,26 @@
       <!-- list products -->
       <div class="mt-2 row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 gy-5 w-100">
         <!-- product -->
-        <div class="col">
+        <div *ngFor="let p of products" class="col">
           <div class="product-container">
             <div class="prd-img-container">
-              <img src="assets/product_img.png" alt="">
+              <img *ngFor="let i of images | slice:0:1" [src]="i.image" alt="">
             </div>
             <div class="prd-card-inf">
               <div class="prd-info-wrapper">
-                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
-                <div class="prd-category">JACKET</div>
+                <div class="prd-name">{{ p.name }}</div>
+                <div class="prd-category">{{ p.category_name }}</div>
               </div>
               <div class="btn-price-container">
-                <button>ADD TO CART</button>
-                <div class="price">$7.200</div>
+                <button
+                type="button"
+                (click)="addToCart(p.id)">ADD TO CART</button>
+                <div class="price">${{ p.price }}</div>
               </div>
             </div>
           </div>
         </div>
-        <!-- product -->
-        <!-- product -->
-        <div class="col">
-          <div class="product-container">
-            <div class="prd-img-container">
-              <img src="assets/product_img.png" alt="">
-            </div>
-            <div class="prd-card-inf">
-              <div class="prd-info-wrapper">
-                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
-                <div class="prd-category">JACKET</div>
-              </div>
-              <div class="btn-price-container">
-                <button>ADD TO CART</button>
-                <div class="price">$7.200</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- product -->
-        <!-- product -->
-        <div class="col">
-          <div class="product-container">
-            <div class="prd-img-container">
-              <img src="assets/product_img.png" alt="">
-            </div>
-            <div class="prd-card-inf">
-              <div class="prd-info-wrapper">
-                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
-                <div class="prd-category">JACKET</div>
-              </div>
-              <div class="btn-price-container">
-                <button>ADD TO CART</button>
-                <div class="price">$7.200</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- product -->
-        <!-- product -->
-        <div class="col">
-          <div class="product-container">
-            <div class="prd-img-container">
-              <img src="assets/product_img.png" alt="">
-            </div>
-            <div class="prd-card-inf">
-              <div class="prd-info-wrapper">
-                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
-                <div class="prd-category">JACKET</div>
-              </div>
-              <div class="btn-price-container">
-                <button>ADD TO CART</button>
-                <div class="price">$7.200</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- product -->
-        <!-- product -->
-        <div class="col">
-          <div class="product-container">
-            <div class="prd-img-container">
-              <img src="assets/product_img.png" alt="">
-            </div>
-            <div class="prd-card-inf">
-              <div class="prd-info-wrapper">
-                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
-                <div class="prd-category">JACKET</div>
-              </div>
-              <div class="btn-price-container">
-                <button>ADD TO CART</button>
-                <div class="price">$7.200</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- product -->
-        <!-- product -->
-        <div class="col">
-          <div class="product-container">
-            <div class="prd-img-container">
-              <img src="assets/product_img.png" alt="">
-            </div>
-            <div class="prd-card-inf">
-              <div class="prd-info-wrapper">
-                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
-                <div class="prd-category">JACKET</div>
-              </div>
-              <div class="btn-price-container">
-                <button>ADD TO CART</button>
-                <div class="price">$7.200</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- product -->
-        <!-- product -->
-        <div class="col">
-          <div class="product-container">
-            <div class="prd-img-container">
-              <img src="assets/product_img.png" alt="">
-            </div>
-            <div class="prd-card-inf">
-              <div class="prd-info-wrapper">
-                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
-                <div class="prd-category">JACKET</div>
-              </div>
-              <div class="btn-price-container">
-                <button>ADD TO CART</button>
-                <div class="price">$7.200</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- product -->
-        <!-- product -->
-        <div class="col">
-          <div class="product-container">
-            <div class="prd-img-container">
-              <img src="assets/product_img.png" alt="">
-            </div>
-            <div class="prd-card-inf">
-              <div class="prd-info-wrapper">
-                <div class="prd-name">Unity Sports Icon Racer Jacket in Sliver</div>
-                <div class="prd-category">JACKET</div>
-              </div>
-              <div class="btn-price-container">
-                <button>ADD TO CART</button>
-                <div class="price">$7.200</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- product -->
+        
       </div>
       <!-- pagination -->
       <div class="pagination-container">

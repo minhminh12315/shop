@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { CartService } from '../../cart.service';
 @Component({
   selector: 'app-header',
   imports: [
@@ -12,16 +13,20 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  cartCount: number = 0;
   logedIn: boolean = false;
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+     private cartService: CartService
+  ) {}
 
-  // lấy ra localStorage kiểm tra xem đã đăng nhập hay chưa
   isLoggedIn(): boolean {
     return !!localStorage.getItem('token');
   }
 
   ngOnInit() {
-    
+    this.cartService.cartCount$.subscribe(count => {
+      this.cartCount = count;
+    });
   }
 
   logout() {

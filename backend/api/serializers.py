@@ -21,10 +21,12 @@ class ProductSerializer(serializers.ModelSerializer):
     category = serializers.PrimaryKeyRelatedField(
         queryset=Category.objects.all()
     )
+    category_name = serializers.CharField(source='category.name', read_only=True)  # Thêm dòng này
+
 
     class Meta:
         model = Product
-        fields = ['id', 'name', 'price', 'category', 'images']
+        fields = ['id', 'name', 'price', 'category','category_name', 'images']
         read_only_fields = ['id']
         extra_kwargs = {
             'name': {'required': True},

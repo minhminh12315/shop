@@ -14,10 +14,13 @@ from .serializers import RegisterSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from django_filters.rest_framework import DjangoFilterBackend
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['category']
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
