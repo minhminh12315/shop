@@ -23,4 +23,9 @@ export class HeaderComponent {
   ngOnInit() {
     
   }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
 }

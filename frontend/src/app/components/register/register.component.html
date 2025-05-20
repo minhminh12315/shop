@@ -1,25 +1,16 @@
 <div class="container">
     <div class="login-form-container">
-        <form class="login-form">
+        <form (ngSubmit)="onRegister()" class="login-form">
             <div class="login-form-title">SIGN UP</div>
             <div class="input-login-group">
                 <div>
-                    <input type="text" placeholder="first name">
+                    <input [(ngModel)]="email" type="text" name="email" placeholder="email">
                 </div>
                 <div>
-                    <input type="text" placeholder="fast name">
-                </div>
-                <div>
-                    <input type="text" placeholder="fsername">
-                </div>
-                <div>
-                    <input type="text" placeholder="fmail">
-                </div>
-                <div>
-                    <input type="text" placeholder="username">
+                    <input [(ngModel)]="username" type="text" name="username" placeholder="username">
                 </div>
                 <div class="position-relative">
-                    <input type="password" id="password" placeholder="password">
+                    <input [(ngModel)]="password" type="password" name="password" id="password" placeholder="password">
                     <div class="hidePassword">
                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
                             <path
@@ -29,7 +20,7 @@
                     </div>
                 </div>
                 <div class="position-relative">
-                    <input type="password" id="password" placeholder="confirm password">
+                    <input [(ngModel)]="confirmPassword" type="password" id="confirmPassword" name="confirmPassword" placeholder="confirm password">
                     <div class="hidePassword">
                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
                             <path
@@ -39,7 +30,9 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-login">SIGN UP</button>
+            <div *ngIf="error" class="text-danger">{{ error }}</div>
+
+            <button class="btn-login" type="submit">SIGN UP</button>
         </form>
         <div
             class="register-container d-flex flex-column flex-md-row align-items-center justify-content-center gap-md-2 gap-3">
