@@ -1,5 +1,310 @@
-.card-img-top {
+.prd-card-img-container,
+.carousel-item {
+  height: 400px;
+  /* Chiều cao bạn muốn hiển thị */
+  overflow: hidden;
+  /* Ẩn phần ảnh vượt ra ngoài */
+  /* Đảm bảo ảnh bám sát phía trên */
+}
+
+.prd-card-img-container .img-swiper {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
+  /* Lấy phần trên của ảnh */
+}
+
+.img-preview-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.img-preview-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.prd-detail-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 24px;
+  padding: 8px;
+}
+
+.prd-detail-info-container .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 16.5px;
+  padding-inline: 10px;
+}
+
+.prd-detail-info-container .info .prd-name {
+  display: flex;
+  padding-block: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--Neutral-Black-16, #282828);
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.408px;
+}
+
+.prd-detail-info-container .info .prd-category {
+  display: flex;
+  padding-block: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--Neutral-Black-16, #282828);
+  font-family: var(--secondary-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.408px;
+}
+
+.prd-detail-info-container .info .prd-price {
+  display: flex;
+  padding-block: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--Sematic-100, #DB504A);
+  font-family: var(--primary-font);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.prd-detail-info-container .btn-group-prd-detail {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-inline: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.prd-detail-info-container .btn-group-prd-detail .btn-add-to-card {
+  width: 100%;
+  display: flex;
+  height: 52px;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 28px;
+  border: 1px solid var(--Neutral-Black-36, #5C5C5C);
+  background-color: transparent;
+
+  color: var(--Neutral-Black-26, #424242);
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.408px;
+  transition: all 0.15s ease-in-out;
+}
+
+.prd-detail-info-container .btn-group-prd-detail .btn-purchase {
+  width: 100%;
+  display: flex;
+  height: 52px;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 28px;
+  background: var(--Neutral-Black-26, #424242);
+
+  color: var(--Neutral-White-90, #E6E6E6);
+  /* Button/16 */
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.408px;
+  transition: all 0.15s ease-in-out;
+}
+
+.prd-detail-info-container .btn-group-prd-detail .btn-add-to-card:hover {
+  background: var(--Neutral-Black-26, #424242);
+  color: var(--Neutral-White-90, #E6E6E6);
+}
+
+.prd-detail-info-container .btn-group-prd-detail .btn-purchase:hover {
+  background-color: transparent;
+
+  color: var(--Neutral-Black-26, #424242);
+}
+
+.prd-detail-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 12px;
+  padding-inline: 10px;
+  margin-top: 40px;
+}
+
+.prd-detail-description h5 {
+  padding-block: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: #000;
+
+  /* Body/Medium */
+  font-family: var(--secondary-font);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.prd-detail-description p {
+  padding-block: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: #000;
+
+  /* Body/Medium */
+  font-family: var(--secondary-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.408px;
+}
+
+
+.similar-prd-container {
+  margin-top: 125px;
+  margin-bottom: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.similar-prd-container .title {
+  padding: 10px;
+  color: #000;
+  font-family: var(--primary-font);
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.408px;
+}
+
+.similar-prd-container .btn-explore-more {
+  padding: 10px;
+  color: #000;
+  font-family: var(--primary-font);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.card-product-similar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  border: 1px solid var(--Neutral-White-70, #B3B3B3);
+  /* border-right: 1px solid var(--Neutral-White-70, #B3B3B3);
+  border-left: 1px solid var(--Neutral-White-70, #B3B3B3); */
+  border-radius: 18px;
+}
+
+.card-product-similar img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  border-radius: 18px;
+
+  background-color: transparent;
+}
+
+.card-product-similar .info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: start;
+  gap: 12px;
+  padding: 10px 12px;
+}
+
+.card-product-similar .info-container .info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: start;
+  gap: 24px;
+}
+
+.card-product-similar .info-container .info-wrapper h5 {
+  color: #000;
+  font-family: var(--primary-font);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.card-product-similar .info-container .info-wrapper p {
+  color: #000;
+  font-family: var(--secondary-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.card-product-similar .info-container .price-container p {
+  color: #000;
+  font-family: var(--secondary-font);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
