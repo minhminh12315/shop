@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Image } from './image.service';
 
 // Tạo interface cho Product (giống với serializer Django)
 export interface Product {
   id: number;
   name: string;
   price: number;
+  images: Image[];
 }
 
 @Injectable({
@@ -29,7 +31,7 @@ export class ProductService {
   }
 
   // Tạo mới
-  addProduct(data: { name: string; price: number }): Observable<Product> {
+  addProduct(data: { name: string; price: number; category_id: number }): Observable<Product> {
     return this.http.post<Product>(this.apiUrl, data);
   }
 

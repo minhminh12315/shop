@@ -1,18 +1,26 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
+  standalone: true,
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  constructor(private router: Router) { }
-  logoClick() {
-    this.router.navigate(['/'])
+  logedIn: boolean = false;
+  constructor(private router: Router) {}
+
+  // lấy ra localStorage kiểm tra xem đã đăng nhập hay chưa
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
   }
 
-  userIconClick() {
-    this.router.navigate(['/login'])
+  ngOnInit() {
+    
   }
 }

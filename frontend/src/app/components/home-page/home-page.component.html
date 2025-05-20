@@ -1,88 +1,40 @@
 <div class="mt-5">
-    <div class="video_welcom">
-        <video muted autoplay loop>
-            <source src="assets/video-welcome.mp4" type="video/mp4">
-        </video>
-        <div class="sub_video">
-            <div class="welcome_title">WELCOME</div>
-            <div class="welcome_desc">
-                Buy, sell, discover authenticated
-                archived pieces from world's top brands
-            </div>
-            <div class="login_signup">
-                <button class="btn_login">LOG IN</button>
-                <button class="btn_signup">SIGN UP</button>
-            </div>
-        </div>
+  <div class="video_welcom">
+    <video muted autoplay loop>
+      <source src="assets/video-welcome.mp4" type="video/mp4" />
+    </video>
+    <div class="sub_video">
+      <div class="welcome_title">WELCOME</div>
+      <div class="welcome_desc">
+        Buy, sell, discover authenticated archived pieces from world's top
+        brands
+      </div>
+      <div class="login_signup">
+        <button class="btn_login">LOG IN</button>
+        <button class="btn_signup">SIGN UP</button>
+      </div>
     </div>
-    <div class="container w-100">
-        <!-- men swear -->
-        <div class="homepage-shop-sample d-flex flex-column justify-content-center align-items-center gap-4">
-            <div class="d-flex flex-row justify-content-between align-items-center w-100">
-                <div class="title">Shop Menswear</div>
-                <a href="" class="btn-explore-more">Explore more</a>
-            </div>
-            <div class="list-product row row-cols-2 row-cols-md-4 g-4">
-                <div class="col">
-                    <img src="assets/menswearhomepage1.jpg" alt="" class="" style="object-fit: cover;">
-                </div>
-                <div class="col">
-                    <img src="assets/menswearhomepage1.jpg" alt="" class="" style="object-fit: cover;">
-                </div>
-                <div class="col">
-                    <img src="assets/menswearhomepage1.jpg" alt="" class="" style="object-fit: cover;">
-                </div>
-                <div class="col">
-                    <img src="assets/menswearhomepage1.jpg" alt="" class="" style="object-fit: cover;">
-                </div>
-            </div>
+  </div>
+  <div class="container w-100">
+    <!-- men swear -->
+    <div
+      *ngFor="let c of categories"
+      class="homepage-shop-sample d-flex flex-column justify-content-center align-items-center gap-4">
+      <div class="d-flex flex-row justify-content-between align-items-center w-100">
+            <div class="title">{{ c.name }}</div>
+            <a href="" class="btn-explore-more">Explore more</a>
+      </div>
+      <a *ngFor="let p of c.products | slice:0:4"  [routerLink] = "['/product-detail', p.id]"   class="list-product row row-cols-2 row-cols-md-4 g-4">
+        <div *ngFor="let i of p.images | slice:0:1" class="col">
+          <img [src]="i.image" alt="" class="" style="object-fit: cover" />
         </div>
-        <!-- women swear -->
-        <div class="homepage-shop-sample d-flex flex-column justify-content-center align-items-center gap-4">
-            <div class="d-flex flex-row justify-content-between align-items-center w-100">
-                <div class="title">Shop Womenswear</div>
-                <a href="" class="btn-explore-more">Explore more</a>
-            </div>
-            <div class="list-product row row-cols-2 row-cols-md-4 g-4">
-                <div class="col">
-                    <img src="assets/menswearhomepage1.jpg" alt="" class="" style="object-fit: cover;">
-                </div>
-                <div class="col">
-                    <img src="assets/menswearhomepage1.jpg" alt="" class="" style="object-fit: cover;">
-                </div>
-                <div class="col">
-                    <img src="assets/menswearhomepage1.jpg" alt="" class="" style="object-fit: cover;">
-                </div>
-                <div class="col">
-                    <img src="assets/menswearhomepage1.jpg" alt="" class="" style="object-fit: cover;">
-                </div>
-            </div>
-        </div>
-        <!-- shop footwear -->
-        <div class="homepage-shop-sample d-flex flex-column justify-content-center align-items-center gap-4">
-            <div class="d-flex flex-row justify-content-between align-items-center w-100">
-                <div class="title">Shop Footweer</div>
-                <a href="" class="btn-explore-more">Explore more</a>
-            </div>
-            <div class="list-product row row-cols-2 row-cols-md-4 g-4">
-                <div class="col">
-                    <img src="assets/menswearhomepage1.jpg" alt="" class="" style="object-fit: cover;">
-                </div>
-                <div class="col">
-                    <img src="assets/menswearhomepage1.jpg" alt="" class="" style="object-fit: cover;">
-                </div>
-                <div class="col">
-                    <img src="assets/menswearhomepage1.jpg" alt="" class="" style="object-fit: cover;">
-                </div>
-                <div class="col">
-                    <img src="assets/menswearhomepage1.jpg" alt="" class="" style="object-fit: cover;">
-                </div>
-            </div>
-        </div>
+      </a>
     </div>
-    <div class="subfooter-homepage">
-        <img src="assets/homepage_subfooter.jpg" alt="" class="">
-        <div class="subfooter-homepage-content">QUALITY IS REMEMBERED LONG
-            AFTER PRICE IS FORGOTTEN</div>
+  </div>
+  <div class="subfooter-homepage">
+    <img src="assets/homepage_subfooter.jpg" alt="" class="" />
+    <div class="subfooter-homepage-content">
+      QUALITY IS REMEMBERED LONG AFTER PRICE IS FORGOTTEN
     </div>
+  </div>
 </div>
