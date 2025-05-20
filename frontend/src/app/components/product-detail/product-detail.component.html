@@ -1,0 +1,9 @@
+<div class="container" *ngIf="product; else loadingTpl">
+    
+  <h2>{{ product.name }}</h2>
+  <p>Giá: {{ product.price }}</p>
+</div>
+<ng-template #loadingTpl>
+  <p *ngIf="loading">Đang tải...</p>
+  <p *ngIf="!loading">Không tìm thấy sản phẩm.</p>
+</ng-template>
