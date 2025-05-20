@@ -4,6 +4,7 @@
   <ul *ngIf="!loading">
     <li *ngFor="let p of products">
       {{ p.id }} - {{ p.name }} 
+      <a [routerLink]="['/product-detail', p.id]">Xem chi tiết</a>
     </li>
   </ul>
 </div>

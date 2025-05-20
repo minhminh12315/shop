@@ -9,9 +9,19 @@ import { AppComponent } from './app.component';
 
 // Import routes đã định nghĩa (nếu bạn đã viết app.routes.ts)
 import { routes } from './app.routes';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
+    ProductDetailComponent,
+    HeaderComponent,
+    HomePageComponent,
+    FooterComponent,
+    ProductListComponent
     // AppComponent
     // Nếu bạn có thêm các component khác (ví dụ product-list, product-detail, v.v.), gõ thêm ở đây
   ],
