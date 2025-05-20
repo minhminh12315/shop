@@ -20,18 +20,15 @@ export class RegisterComponent {
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  // Hàm xử lý khi người dùng nhấn nút đăng ký
 
   onRegister() {
     this.error = '';
 
-    // Kiểm tra xem mật khẩu và xác nhận mật khẩu có giống nhau không
     if (this.password !== this.confirmPassword) {
       this.error = 'Mật khẩu không khớp!';
       return;
     }
 
-    // Gửi yêu cầu đăng ký đến API
     this.http
       .post<any>('http://127.0.0.1:8000/api/register/', {
         username: this.username,
@@ -40,7 +37,6 @@ export class RegisterComponent {
       })
       .subscribe({
         next: (res) => {
-          // Chuyển hướng đến trang đăng nhập sau khi đăng ký thành công
           this.router.navigate(['/login']);
           console.log(res);
         },
