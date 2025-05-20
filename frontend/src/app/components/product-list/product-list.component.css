@@ -1,0 +1,325 @@
+.list-product-img-about {
+    height: 620px;
+    width: 100%;
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 96px;
+}
+
+.list-product-img-about img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.list-product-img-about .list-product-img-about-content {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    text-align: center;
+    font-family: var(--primary-font);
+    color: #000;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+.list-products-container {
+    margin-top: 222px;
+}
+
+.filter-container button.navbar-toggler {
+    display: flex;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    border-radius: 28px;
+    background: var(--Neutral-Black-16, #282828);
+    z-index: 10;
+    transition: all 0.15s ease-in-out;
+}
+
+.filter-container button.navbar-toggler:hover {
+    background: #254174;
+}
+
+
+.filter-container button.navbar-toggler span {
+    color: var(--Neutral-White-90, #E6E6E6);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #B3B3B3;
+    border-radius: 16px;
+}
+
+.product-container .prd-img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    background-color: transparent;
+    border-radius: 16px;
+}
+
+.product-container .prd-card-inf {
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    align-self: stretch;
+    background: #FFF;
+    border-radius: 0 0 16px 16px;
+}
+
+.product-container .prd-card-inf .prd-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.product-container .prd-card-inf .prd-info-wrapper .prd-name {
+    color: var(--Neutral-Black-16, #282828);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+.product-container .prd-card-inf .prd-info-wrapper .prd-category {
+    color: var(--Neutral-Black-36, #5C5C5C);
+    font-family: var(--secondary-font);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+.product-container .prd-card-inf .btn-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.product-container .prd-card-inf .btn-price-container button {
+    display: flex;
+    height: 36px;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 28px;
+    border: 1px solid rgba(0, 0, 0, 0.88);
+    background-color: #FFF;
+    transition: all 0.15s ease-in-out;
+}
+
+.product-container .prd-card-inf .btn-price-container button:hover {
+    color: #FFF;
+    background: #254174;
+}
+
+.product-container .prd-card-inf .btn-price-container .price {
+    color: var(--Primary-30, #254174);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+.pagination-container {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.pagination-container button {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    border: none;
+    background-color: transparent;
+    fill: var(--Neutral-Black-16, #282828);
+    opacity: 0.8;
+    transition: all 0.2s ease-in-out;
+}
+
+.pagination-container button:hover {
+    background-color: #282828;
+    opacity: 1;
+}
+
+.pagination-container button:hover svg path {
+    fill: white;
+}
+
+.pagination-container .pages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-container .pages button {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 4px;
+    border-radius: 100px;
+    border: 1px solid var(--Neutral-Black-16, #282828);
+    background-color: transparent;
+    fill: var(--Neutral-Black-16, #282828);
+    opacity: 0.8;
+    transition: all 0.2s ease-in-out;
+    color: var(--Neutral-Black-16, #282828);
+    /* Button/16 */
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+.pagination-container .pages button:hover {
+    background-color: #282828;
+    opacity: 1;
+}
+
+.pagination-container .pages button:hover span {
+    color: white;
+}
+
+.pagination-container .pages button.active {
+    background-color: #282828;
+    opacity: 1;
+}
+
+.pagination-container .pages button.active span {
+    color: white;
+}
+
+#filterOffcanvas .offcanvas-title {
+    color: #254174;
+    /* Title/24 */
+    font-family: "Space Grotesk";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#filterOffcanvas .filter-wrapper {
+    padding-block: 32px;
+    border-top: 1px solid #000;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+#filterOffcanvas .filter-wrapper button {
+    width: 100%;
+    padding: 8px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 28px;
+    border: 1px solid #5C5C5C;
+    background: #FFF;
+
+    color: var(--Neutral-Black-16, #282828);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+#filterOffcanvas .filter-wrapper .fiter-wrapper-title {
+    color: var(--Neutral-Black-16, #282828);
+    font-family: var(--secondary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+#filterOffcanvas .button-group-container {
+    border-top: 1px solid #000;
+    padding-top: 16px;
+    margin-top: 16px;
+}
+
+#filterOffcanvas .button-group-container button {
+    width: 100%;
+    display: flex;
+    padding: 8px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 28px;
+    border: 1px solid var(--Neutral-Black-36, #5C5C5C);
+    background: #FFF;
+    color: var(--Neutral-Black-16, #282828);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+    transition: all 0.15s ease-in-out;
+}
+
+#filterOffcanvas .button-group-container button.btn-apply {
+    background: var(--Neutral-Black-16, #282828);
+    color: #FFF;
+}
+
+#filterOffcanvas .button-group-container button:hover {
+    background: var(--Neutral-Black-16, #282828);
+    color: #FFF;
+}
+
+#filterOffcanvas .button-group-container button.btn-apply:hover {
+    background-color: transparent;
+    color: var(--Neutral-Black-16, #282828);
+}
