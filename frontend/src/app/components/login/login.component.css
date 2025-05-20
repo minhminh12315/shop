@@ -1,0 +1,153 @@
+.login-form-container {
+    width: 100%;
+    min-height: 50vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 200px;
+    gap: 42px;
+}
+
+.login-form-container .login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+.login-form-container .login-form-title {
+    width: 100%;
+    padding: 12px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #000;
+    font-family: var(--primary-font);
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.login-form-container .login-form .input-login-group #username,
+.login-form-container .login-form .input-login-group #password {
+    width: 100%;
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 28px;
+    border: 1px solid #000;
+    opacity: 0.6;
+}
+
+.login-form-container .login-form .input-login-group input {
+    width: 100%;
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 28px;
+    border: 1px solid #000;
+    opacity: 0.6;
+}
+
+.login-form-container .login-form .input-login-group input {
+    color: #000;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.login-form-container .login-form .input-login-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    gap: 24px;
+}
+
+.btn-login {
+    background-color: transparent;
+    display: flex;
+    width: 125px;
+    height: 60px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.8;
+    border-radius: 32px;
+    border: 1px solid var(--Neutral-Black-16, #282828);
+    color: var(--Neutral-Black-16, #282828);
+    /* Button/16 */
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn-login:hover {
+    background-color: #282828;
+    color: #FFFFFF;
+}
+
+.register-container {
+    width: 100%;
+}
+
+.register-container p {
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+.register-container a {
+    color: #254174;
+    opacity: 0.8;
+    font-family: var(--primary-font);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+    transition: all 0.15s ease-in-out;
+}
+
+.register-container a:hover {
+    opacity: 1;
+}
+
+.hidePassword {
+    position: absolute;
+    top: 18px;
+    bottom: 12px;
+    right: 16px;
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (max-width: 600px) {
+    .login-form-container {
+        padding: 40px;
+    }
+}
