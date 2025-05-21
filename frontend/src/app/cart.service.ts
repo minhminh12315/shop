@@ -34,6 +34,33 @@ export class CartService {
   }
 
   getCartCount(): number {
-    return this.getCart().reduce((sum, item) => sum + item.quantity, 0);
+    return this.getCart().length;
+  }
+
+  increaseQuantity(productId: number): void {
+    const cart = this.getCart();
+    const item = cart.find((item: any) => item.id === productId);
+    if (item) {
+      item.quantity += 1;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      this.cartCountSubject.next(this.getCartCount());
+    }
+  }
+
+  decreaseQuantity(productId: number): void {
+    const cart = this.getCart();
+    const item = cart.find((item: any) => item.id === productId);
+    if (item && item.quantity > 1) {
+      item.quantity -= 1;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      this.cartCountSubject.next(this.getCartCount());
+    }
+  }
+
+  removeFromCart(productId: number): void {
+    const cart = this.getCart();
+    const updatedCart = cart.filter((item: any) => item.id !== productId);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    this.cartCountSubject.next(this.getCartCount());
   }
 }

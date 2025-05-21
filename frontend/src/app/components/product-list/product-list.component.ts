@@ -39,10 +39,7 @@ export class ProductListComponent implements OnInit {
     const product = this.products.find((p) => p.id === productId);
     if (product) {
       this.cartService.addToCart({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        image: product.images[0]?.image,
+        id: product.id
       });
       console.log('Thêm sản phẩm vào giỏ hàng:', productId);
     }
