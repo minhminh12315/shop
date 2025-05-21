@@ -17,7 +17,7 @@
     </div>
     <div class="container w-100">
         <!-- men swear -->
-        <div *ngFor="let c of categories"
+        <div *ngFor="let c of categories | slice:0:4"
             class="homepage-shop-sample d-flex flex-column justify-content-center align-items-center gap-4">
             <div class="d-flex flex-row justify-content-between align-items-center w-100">
                 <div class="title">{{ c.name }}</div>
