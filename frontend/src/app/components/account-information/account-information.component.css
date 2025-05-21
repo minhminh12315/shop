@@ -1,0 +1,88 @@
+#account-info-container {
+    min-height: 50vh;
+}
+
+.acc-info-title-container h1 {
+    color: var(--Neutral-Black-26, #424242);
+    font-family: var(--primary-font);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.acc-info-title-container p span {
+    color: var(--Neutral-Black-16, #282828);
+    font-family: var(--secondary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+.last-order-title {
+    color: var(--Neutral-Black-16, #282828);
+    font-family: var(--secondary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+table tr th {
+    color: var(--Neutral-Black-26, #000);
+    font-family: var(--primary-font);
+}
+
+table tr td {
+    color: var(--Neutral-Black-16, #282828);
+    font-family: var(--secondary-font);
+}
+
+.customer-name-container p {
+    color: var(--Neutral-Black-46, #757575);
+
+    /* Body/Regular */
+    font-family: var(--secondary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+.customer-name-container p.name,
+.customer-name-container p.mail {
+    color: #000;
+    font-family: var(--secondary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+.btn-logout {
+    display: flex;
+    padding: 12px;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    border-radius: 28px;
+    background: var(--Neutral-Black-26, #424242);
+    color: var(--Neutral-White-90, #E6E6E6);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+    transition: all 0.25 ease-in-out;
+}
+
+.btn-logout:hover{
+    background: #254174;
+}
