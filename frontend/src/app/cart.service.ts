@@ -3,11 +3,22 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class CartService {
-  private cartCountSubject = new BehaviorSubject<number>(this.getCartCount());
-  cartCount$ = this.cartCountSubject.asObservable();
+  private cartCountSubject: BehaviorSubject<number>;
+  cartCount$;
+
+  constructor() {
+    const count = this.getCartCount();
+    this.cartCountSubject = new BehaviorSubject<number>(count);
+    this.cartCount$ = this.cartCountSubject.asObservable();
+  }
 
   getCart(): any[] {
-    return JSON.parse(localStorage.getItem('cart') || '[]');
+    if (typeof window !== 'undefined' && !localStorage.getItem('cart')) {
+      localStorage.setItem('cart', JSON.stringify([]));
+    }
+    return typeof window !== 'undefined'
+      ? JSON.parse(localStorage.getItem('cart') || '[]')
+      : [];
   }
 
   addToCart(product: any): void {

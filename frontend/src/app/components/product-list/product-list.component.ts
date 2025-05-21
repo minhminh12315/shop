@@ -4,14 +4,13 @@ import { ProductService, Product } from '../../services/product.service';
 import { RouterModule, Router } from '@angular/router'; // Thêm dòng này
 import { ImageService, Image } from '../../services/image.service';
 import { Category, CategoryService } from '../../services/category.service';
-import { HeaderComponent } from '../header/header.component';
 import { CartService } from '../../cart.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
-  imports: [CommonModule, RouterModule, HeaderComponent], // Add this line
+  imports: [CommonModule, RouterModule], // Add this line
   standalone: true, // If not already present
 })
 export class ProductListComponent implements OnInit {

@@ -323,3 +323,7 @@
     background-color: transparent;
     color: var(--Neutral-Black-16, #282828);
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}
