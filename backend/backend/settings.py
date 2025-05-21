@@ -47,11 +47,11 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware', 
-    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
@@ -153,7 +153,7 @@ REST_FRAMEWORK = {
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-CSRF_COOKIE_SAMESITE = 'None'      # cho phép cookie CSRF được gửi từ domain khác
-CSRF_COOKIE_SECURE = False         # (ở môi trường dev) nếu dùng HTTPS, đặt True
-SESSION_COOKIE_SAMESITE = 'None'   # tương tự cho session cookie
-SESSION_COOKIE_SECURE = False      # (ở môi trường dev) nếu dùng HTTPS, đặt True
+SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = False  
+CSRF_COOKIE_SAMESITE     = 'None'
+CSRF_COOKIE_SECURE       = False

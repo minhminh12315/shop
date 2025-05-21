@@ -8,6 +8,7 @@ from .views import OrderDetailViewSet
 from .views import RegisterView
 from .views import UserInfoView
 from .views import SessionLoginView
+from .views import LogoutView
 from rest_framework.authtoken.views import obtain_auth_token
 
 router = routers.DefaultRouter()
@@ -23,5 +24,7 @@ urlpatterns = [
     path('login/', SessionLoginView.as_view(), name='login'),
     path('register/', RegisterView.as_view(), name='register'),
     path('user-info/', UserInfoView.as_view(), name='user-info'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+
 
 ] 
