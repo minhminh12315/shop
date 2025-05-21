@@ -1,0 +1,170 @@
+.cart-detail-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    border-top: 1px solid var(--Neutral-White-70, #B3B3B3);
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.cart-detail-container .img-prd-name-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    gap: 16px;
+}
+
+.cart-detail-container .img-prd-name-container .prd-name {
+    color: #000;
+    width: 60%;
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-wrap: wrap;
+}
+
+.cart-detail-container .img-prd-name-container .prd-category {
+    color: #000;
+    font-family: var(--secondary-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.cart-detail-container .img-prd-name-container .prd-price {
+    color: #000;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.cart-detail-container .total-quantity-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-detail-container .total-quantity-container .total-price {
+    color: var(--Sematic-100, #DB504A);
+    font-family: var(--primary-font);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.cart-detail-container .total-quantity-container .quantity-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-detail-container .total-quantity-container .quantity-container button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+}
+
+.cart-detail-container .total-quantity-container .quantity-container .quantity {
+    width: 30%;
+    text-align: center;
+    color: var(--Sematic-100, #000);
+    /* Title/36 */
+    font-family: var(--primary-font);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.payment-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid #B3B3B3;
+}
+
+.payment-container .payment-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 12px 32px;
+}
+
+.payment-container .payment-header h5 {
+    text-align: center;
+    color: var(--Sematic-100, #000);
+    /* Title/36 */
+    font-family: var(--secondary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.payment-container .payment-header p {
+    text-align: center;
+    color: var(--Sematic-100, #000);
+    /* Title/36 */
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.payment-container .btn-payment-container {
+    border-top: 1px solid #B3B3B3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.payment-container .btn-payment-container button {
+    padding: 16px 24px;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--Neutral-Black-16, #282828);
+    color: var(--Neutral-White-90, #E6E6E6);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+    transition: all 0.25s ease-in-out;
+}
+
+.payment-container .btn-payment-container button:hover {
+    background-color: #254174;
+}
