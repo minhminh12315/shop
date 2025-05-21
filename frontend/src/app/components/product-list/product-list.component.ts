@@ -93,30 +93,11 @@ export class ProductListComponent implements OnInit {
   chooseCate(categoryId: number): void {
     this.selectedCategory = categoryId;
     console.log('Danh mục đã chọn:', this.selectedCategory);
-
-    // this.productService.getProductsByCategory(categoryId).subscribe({
-    //   next: (data) => {
-    //     this.products = data;
-    //     console.log('Danh sách sản phẩm theo danh mục:', data);
-    //   },
-    //   error: (err) => {
-    //     console.error('Lỗi khi lấy danh sách sản phẩm theo danh mục:', err);
-    //   },
-    // });
   }
 
   chooseFilter(filter: string): void {
     this.selectedFilter = filter;
     console.log('Lọc theo:', this.selectedFilter);
-
-    // Thực hiện lọc sản phẩm theo filter
-    // if (filter === 'asc') {
-    //   this.products.sort((a, b) => a.price - b.price);
-    // } else if (filter === 'desc') {
-    //   this.products.sort((a, b) => b.price - a.price);
-    // } else if (filter === 'default') {
-    //   this.products.sort((a, b) => a.id - b.id);
-    // }
   }
 
   applyFilter(): void {

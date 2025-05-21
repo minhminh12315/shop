@@ -11,26 +11,12 @@
             data-bs-touch="true"
           >
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img
-                  src="assets/anh_detail_1.jpg"
-                  class="img-swiper"
-                  alt="..."
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="assets/anh_detail_1.jpg"
-                  class="img-swiper"
-                  alt="..."
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="assets/anh_detail_1.jpg"
-                  class="img-swiper"
-                  alt="..."
-                />
+              <div
+                *ngFor="let img of product.images; let idx = index"
+                class="carousel-item"
+                [class.active]="idx === selectedImageIndex"
+              >
+                <img [src]="img.image" class="img-swiper" alt="..." />
               </div>
             </div>
             <button
@@ -104,12 +90,15 @@
           </div>
         </div>
         <div class="img-preview-container">
-          <img src="assets/anh_detail_1.jpg" class="img-fluid" alt="..." />
-          <img src="assets/anh_detail_1.jpg" class="img-fluid" alt="..." />
-          <img src="assets/anh_detail_1.jpg" class="img-fluid" alt="..." />
-          <img src="assets/anh_detail_1.jpg" class="img-fluid" alt="..." />
-          <img src="assets/anh_detail_1.jpg" class="img-fluid" alt="..." />
-          <img src="assets/anh_detail_1.jpg" class="img-fluid" alt="..." />
+          <img
+            *ngFor="let img of product.images; let idx = index"
+            [src]="img.image"
+            class="img-fluid"
+            [class.selected]="idx === selectedImageIndex"
+            (click)="selectedImageIndex = idx"
+            alt="..."
+            style="cursor: pointer; width: 80px; margin-right: 8px"
+          />
         </div>
       </div>
     </div>
@@ -145,74 +134,31 @@
     <div
       class="d-flex flex-row justify-content-between align-items-center w-100"
     >
-      <div class="title">Balenciaga</div>
-      <a href="" class="btn-explore-more">Explore more</a>
+      <div class="title">Similar products</div>
+      <a class="btn-explore-more">Explore more</a>
     </div>
     <div class="list-prd-similar-container row row-cols-2 row-cols-md-4 g-4">
-      <!-- product similar card -->
-      <a href="">
+      <div *ngIf="loadingSimilar" class="w-100 text-center py-4">
+        <span>Loading similar products...</span>
+      </div>
+      <a
+        *ngFor="let p of similarProducts | slice : 0 : 4"
+        [routerLink]="['/product-detail', p.id]"
+      >
         <div class="card-product-similar">
           <div class="img-container">
-            <img src="assets/product_img.png" alt="" />
+            <img
+              [src]="p.images?.[0]?.image || 'assets/product_img.png'"
+              alt=""
+            />
           </div>
           <div class="info-container">
             <div class="info-wrapper">
-              <h5>Louis Vuitton Varsity Jacket</h5>
-              <p>Description Description Description Description</p>
+              <h5>{{ p.name }}</h5>
+              <p>{{ p.description }}</p>
             </div>
             <div class="price-container">
-              <p>17.000$</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <!-- product similar card -->
-      <a href="">
-        <div class="card-product-similar">
-          <div class="img-container">
-            <img src="assets/product_img.png" alt="" />
-          </div>
-          <div class="info-container">
-            <div class="info-wrapper">
-              <h5>Louis Vuitton Varsity Jacket</h5>
-              <p>Description Description Description Description</p>
-            </div>
-            <div class="price-container">
-              <p>17.000$</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <!-- product similar card -->
-      <a href="">
-        <div class="card-product-similar">
-          <div class="img-container">
-            <img src="assets/product_img.png" alt="" />
-          </div>
-          <div class="info-container">
-            <div class="info-wrapper">
-              <h5>Louis Vuitton Varsity Jacket</h5>
-              <p>Description Description Description Description</p>
-            </div>
-            <div class="price-container">
-              <p>17.000$</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <!-- product similar card -->
-      <a href="">
-        <div class="card-product-similar">
-          <div class="img-container">
-            <img src="assets/product_img.png" alt="" />
-          </div>
-          <div class="info-container">
-            <div class="info-wrapper">
-              <h5>Louis Vuitton Varsity Jacket</h5>
-              <p>Description Description Description Description</p>
-            </div>
-            <div class="price-container">
-              <p>17.000$</p>
+              <p>{{ p.price }}$</p>
             </div>
           </div>
         </div>

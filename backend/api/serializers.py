@@ -49,7 +49,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
-        fields = ['id', 'user', 'order_date']
+        fields = ['id', 'user','address','phone_number','payment_method','status', 'total_amount', 'order_date']
         read_only_fields = ['id', 'order_date']
         extra_kwargs = {
             'user': {'required': True}
