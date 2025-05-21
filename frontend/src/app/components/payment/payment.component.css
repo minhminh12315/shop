@@ -1,0 +1,201 @@
+#payment-container .payment-title {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    padding: 44px 0;
+    align-items: center;
+    border-bottom: 1px solid var(--Neutral-White-80, #CCC);
+}
+
+#payment-container .payment-title h5 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-family: var(--primary-font);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.customer-payment-info-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 120px;
+}
+
+.customer-payment-info-container .customer-payment-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.customer-payment-info-container .customer-payment-info-item label {
+    display: flex;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #000;
+    font-family: var(--primary-font);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.customer-payment-info-container .customer-payment-info-item textarea,
+.customer-payment-info-container .customer-payment-info-item input,
+.customer-payment-info-container .customer-payment-info-item select {
+    width: 100%;
+    display: flex;
+    padding: 20px 12px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 28px;
+    border: 1px solid var(--Neutral-White-80, #CCC);
+}
+
+.customer-payment-info-container .customer-payment-info-item .icon-edit {
+    position: absolute;
+    top: 20px;
+    right: 12px;
+}
+
+.customer-payment-info-container .customer-payment-info-item .icon-edit-area {
+    position: absolute;
+    top: 30px;
+    right: 12px;
+}
+
+.product-to-pay-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    align-self: stretch;
+}
+
+.product-to-pay-container .product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 71px;
+    align-self: stretch;
+}
+
+.product-to-pay-container .product-info .img-info-container {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    align-self: stretch;
+}
+
+.product-to-pay-container .product-info .img-info-container .img-wrapper {
+    width: 220px;
+    height: 220px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.product-to-pay-container .product-info .img-info-container .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.product-to-pay-container .product-info .img-info-container .name-cate-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 8px;
+}
+
+.product-to-pay-container .product-info .img-info-container .name-cate-wrapper .name {
+    color: #000;
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+.product-to-pay-container .product-info .img-info-container .name-cate-wrapper .price {
+    color: var(--Sematic-100, #DB504A);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.product-to-pay-container .product-info .img-info-container .name-cate-wrapper .category {
+    color: #282828;
+    font-family: var(--secondary-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}
+
+.product-to-pay-container .product-info .order-total-container {
+    display: flex;
+    padding: 12px 4px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-top: 1px dashed var(--Neutral-White-80, #CCC);
+}
+
+.product-to-pay-container .product-info .order-total-container h1 {
+    color: #000;
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.product-to-pay-container .product-info .order-total-container p {
+    color: #000;
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.checkout-btn-container button {
+    width: 100%;
+    display: flex;
+    width: 631px;
+    height: 52px;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 28px;
+    background: var(--Neutral-Black-26, #424242);
+    color: var(--Neutral-White-90, #E6E6E6);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.408px;
+}

@@ -6,6 +6,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CartProductComponent } from './components/cart-product/cart-product.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 export const routes: Routes = [
   { path: 'products', component: ProductListComponent },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent}, // chuyển hướng về trang chủ nếu không tìm thấy route
   { path: 'register', component: RegisterComponent}, // chuyển hướng về trang chủ nếu không tìm thấy route
   { path: 'cart', component: CartProductComponent}, // chuyển hướng về trang chủ nếu không tìm thấy route
+  { path: 'payment', component: PaymentComponent}, // chuyển hướng về trang chủ nếu không tìm thấy route
   // có thể thêm các route khác sau
 ];
 
