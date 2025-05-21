@@ -21,13 +21,14 @@ export class CartService {
       : [];
   }
 
-  addToCart(product: any): void {
+  addToCart(product: any, quantity?: number): void {
     const cart = this.getCart();
     const existingItem = cart.find((item: any) => item.id === product.id);
+    const qty = quantity && quantity > 0 ? quantity : 1;
     if (existingItem) {
-      existingItem.quantity += 1;
+      existingItem.quantity += qty;
     } else {
-      cart.push({ ...product, quantity: 1 });
+      cart.push({ ...product, quantity: qty });
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     this.cartCountSubject.next(this.getCartCount());
@@ -62,5 +63,10 @@ export class CartService {
     const updatedCart = cart.filter((item: any) => item.id !== productId);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
     this.cartCountSubject.next(this.getCartCount());
+  }
+
+  clearCart(): void {
+    localStorage.removeItem('cart');
+    this.cartCountSubject.next(0);
   }
 }

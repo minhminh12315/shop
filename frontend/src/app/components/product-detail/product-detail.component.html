@@ -109,9 +109,9 @@
           <p class="prd-category">{{ product.category_name }}</p>
           <p class="prd-price">${{ product.price }}</p>
           <div class="quantity-container">
-            <button>-</button>
-            <span class="quantity">2</span>
-            <button>+</button>
+            <button type="button" (click)="decreaseQuantity()">-</button>
+              <span class="quantity">{{ quantity }}</span>
+            <button type="button" (click)="increaseQuantity()">+</button>
           </div>
         </div>
         <div class="btn-group-prd-detail">
@@ -148,7 +148,7 @@
         <div class="card-product-similar">
           <div class="img-container">
             <img
-              [src]="p.images?.[0]?.image || 'assets/product_img.png'"
+              [src]="p.images[0].image || 'assets/product_img.png'"
               alt=""
             />
           </div>

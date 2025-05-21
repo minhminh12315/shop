@@ -21,6 +21,7 @@ export class ProductDetailComponent {
   loading = false;
   loadingSimilar = false;
   selectedImageIndex = 0;
+  quantity = 1;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,12 +30,22 @@ export class ProductDetailComponent {
     private cartService: CartService
   ) {}
 
+  decreaseQuantity(): void {
+    if (this.quantity > 1) {
+      this.quantity--;
+    }
+  }
+
+  increaseQuantity(): void {
+    this.quantity++;
+  }
+
   addToCart(): void {
     console.log('Thêm sản phẩm vào giỏ hàng:', this.product);
     if (this.product) {
       this.cartService.addToCart({
-        id: this.product.id,
-      });
+        id: this.product.id
+      }, this.quantity);
       console.log('Thêm sản phẩm vào giỏ hàng:', this.product.id);
     }
   }
