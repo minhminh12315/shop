@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ProductService, Product } from '../../services/product.service';
-
-
 @Component({
   selector: 'app-product-detail',
   standalone: true,
@@ -19,7 +17,7 @@ export class ProductDetailComponent {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService
-  ) {}
+  ) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');

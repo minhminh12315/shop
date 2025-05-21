@@ -1,21 +1,159 @@
 <div class="container" *ngIf="product">
-  <div class="row">
-    <div class="col-6">
-      <div class="card">
-        <img
-          src="/assets/anh_detail_1.jpg"
-          class="card-img-top"
-          alt="{{ product.name }}"
-        />
+  <div class="row row-cols-1 row-cols-md-2 g-5">
+    <div class="col">
+      <div class="d-flex flex-column justify-content-center align-items-center gap-4">
+        <div class="prd-card-img-container w-100">
+          <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="true">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/anh_detail_1.jpg" class="img-swiper" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/anh_detail_1.jpg" class="img-swiper" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/anh_detail_1.jpg" class="img-swiper" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+              data-bs-slide="prev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63" fill="none">
+                <g clip-path="url(#clip0_2561_1158)">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M21.8042 33.2107C21.3199 32.7262 21.0479 32.0693 21.0479 31.3843C21.0479 30.6993 21.3199 30.0423 21.8042 29.5579L36.4181 14.9439C36.6564 14.6972 36.9415 14.5004 37.2567 14.365C37.5718 14.2296 37.9108 14.1584 38.2538 14.1554C38.5969 14.1524 38.937 14.2178 39.2545 14.3476C39.572 14.4775 39.8604 14.6694 40.103 14.9119C40.3455 15.1545 40.5374 15.4429 40.6673 15.7604C40.7971 16.0779 40.8625 16.418 40.8595 16.7611C40.8565 17.1041 40.7853 17.4431 40.6499 17.7582C40.5145 18.0734 40.3177 18.3585 40.071 18.5968L27.2835 31.3843L40.071 44.1718C40.5415 44.659 40.8019 45.3115 40.796 45.9889C40.7902 46.6662 40.5185 47.3142 40.0395 47.7931C39.5605 48.2721 38.9126 48.5438 38.2353 48.5497C37.5579 48.5556 36.9054 48.2952 36.4181 47.8246L21.8042 33.2107Z"
+                    fill="black" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2561_1158">
+                    <rect width="62" height="62" fill="white" transform="translate(0.380859 0.383789)" />
+                  </clipPath>
+                </defs>
+              </svg> <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+              data-bs-slide="next">
+              <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63" fill="none">
+                <g clip-path="url(#clip0_2561_1162)">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M41.0203 29.5578C41.5046 30.0423 41.7766 30.6992 41.7766 31.3843C41.7766 32.0693 41.5046 32.7262 41.0203 33.2107L26.4063 47.8246C26.168 48.0713 25.883 48.2681 25.5678 48.4035C25.2526 48.5389 24.9136 48.6102 24.5706 48.6132C24.2276 48.6161 23.8874 48.5508 23.57 48.4209C23.2525 48.291 22.964 48.0992 22.7215 47.8566C22.4789 47.614 22.2871 47.3256 22.1572 47.0081C22.0273 46.6907 21.962 46.3505 21.9649 46.0075C21.9679 45.6645 22.0392 45.3255 22.1746 45.0103C22.31 44.6951 22.5068 44.4101 22.7535 44.1718L35.541 31.3843L22.7535 18.5968C22.2829 18.1095 22.0225 17.457 22.0284 16.7796C22.0343 16.1023 22.306 15.4544 22.785 14.9754C23.2639 14.4964 23.9119 14.2247 24.5892 14.2188C25.2666 14.213 25.9191 14.4733 26.4063 14.9439L41.0203 29.5578Z"
+                    fill="black" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2561_1162">
+                    <rect width="62" height="62" fill="white" transform="translate(0.443359 0.383789)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="img-preview-container">
+          <img src="assets/anh_detail_1.jpg" class="img-fluid" alt="...">
+          <img src="assets/anh_detail_1.jpg" class="img-fluid" alt="...">
+          <img src="assets/anh_detail_1.jpg" class="img-fluid" alt="...">
+          <img src="assets/anh_detail_1.jpg" class="img-fluid" alt="...">
+          <img src="assets/anh_detail_1.jpg" class="img-fluid" alt="...">
+          <img src="assets/anh_detail_1.jpg" class="img-fluid" alt="...">
+        </div>
       </div>
     </div>
-    <div class="col-6">
-      <div class="">
-          <h3 class="">{{ product.name }}</h3>
-            <!-- <p class="card-text">
-                {{ product.description }}
-            </p> -->
+    <div class="col">
+      <div class="prd-detail-info-container">
+        <div class="info">
+          <h5 class="prd-name">RICK OWENS RUNWAY</h5>
+          <p class="prd-category">Balenciaga</p>
+          <p class="prd-price">$9000</p>
+        </div>
+        <div class="btn-group-prd-detail">
+          <button class="btn-add-to-card">ADD TO CART</button>
+          <button class="btn-purchase">PURCHASE</button>
+        </div>
+        <div class="prd-detail-description">
+          <h5>Description</h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur suscipit culpa corrupti tenetur
+            quaerat
+            laborum, autem eveniet nobis cupiditate sit optio error repudiandae quas exercitationem veritatis nihil
+            nesciunt molestias aut?</p>
+        </div>
       </div>
+    </div>
+  </div>
+  <!-- similar product -->
+  <div class="similar-prd-container">
+    <div class="d-flex flex-row justify-content-between align-items-center w-100">
+      <div class="title">Balenciaga</div>
+      <a href="" class="btn-explore-more">Explore more</a>
+    </div>
+    <div class="list-prd-similar-container row row-cols-2 row-cols-md-4 g-4">
+      <!-- product similar card -->
+      <a href="">
+        <div class="card-product-similar">
+          <div class="img-container">
+            <img src="assets/product_img.png" alt="">
+          </div>
+          <div class="info-container">
+            <div class="info-wrapper">
+              <h5>Louis Vuitton Varsity Jacket</h5>
+              <p>Description Description Description Description</p>
+            </div>
+            <div class="price-container">
+              <p>17.000$</p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- product similar card -->
+      <a href="">
+        <div class="card-product-similar">
+          <div class="img-container">
+            <img src="assets/product_img.png" alt="">
+          </div>
+          <div class="info-container">
+            <div class="info-wrapper">
+              <h5>Louis Vuitton Varsity Jacket</h5>
+              <p>Description Description Description Description</p>
+            </div>
+            <div class="price-container">
+              <p>17.000$</p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- product similar card -->
+      <a href="">
+        <div class="card-product-similar">
+          <div class="img-container">
+            <img src="assets/product_img.png" alt="">
+          </div>
+          <div class="info-container">
+            <div class="info-wrapper">
+              <h5>Louis Vuitton Varsity Jacket</h5>
+              <p>Description Description Description Description</p>
+            </div>
+            <div class="price-container">
+              <p>17.000$</p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- product similar card -->
+      <a href="">
+        <div class="card-product-similar">
+          <div class="img-container">
+            <img src="assets/product_img.png" alt="">
+          </div>
+          <div class="info-container">
+            <div class="info-wrapper">
+              <h5>Louis Vuitton Varsity Jacket</h5>
+              <p>Description Description Description Description</p>
+            </div>
+            <div class="price-container">
+              <p>17.000$</p>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </div>
