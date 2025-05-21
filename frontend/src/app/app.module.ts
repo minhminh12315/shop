@@ -1,19 +1,21 @@
-// File: frontend/src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-// AppComponent (component gốc) - file app.component.ts
 import { AppComponent } from './app.component';
 
-// Import routes đã định nghĩa (nếu bạn đã viết app.routes.ts)
 import { routes } from './app.routes';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { CsrfInterceptor } from './interceptors/csrf.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,18 +23,17 @@ import { ProductListComponent } from './components/product-list/product-list.com
     HeaderComponent,
     HomePageComponent,
     FooterComponent,
-    ProductListComponent
-    // AppComponent
-    // Nếu bạn có thêm các component khác (ví dụ product-list, product-detail, v.v.), gõ thêm ở đây
+    ProductListComponent,
   ],
-  imports: [
-    BrowserModule, // nếu dùng SSR, appId phải trùng với server config
-    HttpClientModule,
-    RouterModule.forRoot(routes), // nếu bạn muốn dùng router. Nếu không, chỉ để BrowserModule, HttpClientModule là đủ
-    AppComponent
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(routes), AppComponent],
   providers: [
-    // Các service chung (nếu muốn provide ở cấp module, nhưng thường bạn đã để providedIn: 'root' trong mỗi service)
-  ]
+    provideHttpClient(withInterceptorsFromDi()),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CsrfInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

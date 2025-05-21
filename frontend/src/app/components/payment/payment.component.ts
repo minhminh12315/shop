@@ -45,59 +45,59 @@ export class PaymentComponent implements OnInit {
 
   checkout(): void {
     console.log('Đang xử lý thanh toán...');
+
     this.http
-      .get('http://127.0.0.1:8000/api/user-info/', { withCredentials: true })
+      .get<{ id: number; username: string; email: string}>(
+        'http://127.0.0.1:8000/api/user-info/'
+      )
       .subscribe({
         next: (user) => {
           console.log('User info:', user);
-        },
-        error: () => {
-          console.error('Lỗi khi lấy thông tin người dùng');
-        },
-      });
 
-    // Gửi thông tin thanh toán đến API
-    const orderData = {
-      address: this.shippingAddress,
-      payment_method: this.paymentMethod,
-      phone_number: this.phoneNumber,
-      total_amount: this.totalPrice,
-      user: 1,
-    };
+          const orderData = {
+            address: this.shippingAddress,
+            payment_method: this.paymentMethod,
+            phone_number: this.phoneNumber,
+            total_amount: this.totalPrice,
+            user: user.id,
+          };
 
-    this.orderService.addOrder(orderData).subscribe({
-      next: (response) => {
-        console.log('Đặt hàng thành công:', response);
-        const orderId = response.id; // Lấy id order từ response
+          this.orderService.addOrder(orderData).subscribe({
+            next: (response: any) => {
+              console.log('Đặt hàng thành công:', response);
+              const orderId = response.id;
 
-        // Gửi thông tin chi tiết đơn hàng đến API
-        const orderDetails = this.cart.map((item) => ({
-          order: orderId, // Dùng id vừa lấy được
-          product: item.id,
-          quantity: item.quantity,
-        }));
+              const orderDetails = this.cart.map((item) => ({
+                order: orderId,
+                product: item.id,
+                quantity: item.quantity,
+              }));
 
-        // Gửi từng order detail (hoặc dùng forkJoin nếu muốn gửi song song)
-        orderDetails.forEach((detail) => {
-          this.orderDetailService.addOrderDetail(detail).subscribe({
-            next: (res) => {
-              console.log('Order detail added:', res);
-              // Cập nhật giỏ hàng sau khi thêm chi tiết đơn hàng
+              orderDetails.forEach((detail) => {
+                this.orderDetailService.addOrderDetail(detail).subscribe({
+                  next: (res: any) => {
+                    console.log('Order detail added:', res);
+                  },
+                  error: (err: any) => {
+                    console.error('Lỗi khi thêm order detail:', err);
+                  },
+                });
+              });
+
+              this.cartService.clearCart();
+
+              this.router.navigate(['/']);
             },
-            error: (err) => {
-              console.error('Lỗi khi thêm order detail:', err);
+            error: (error: any) => {
+              console.error('Lỗi khi đặt hàng:', error);
             },
           });
-        });
-        this.cartService.clearCart();
-
-        this.router.navigate(['/']);
-
-      },
-      error: (error) => {
-        console.error('Lỗi khi đặt hàng:', error);
-      },
-    });
+        },
+        error: (err) => {
+          console.error('Lỗi khi lấy thông tin người dùng', err);
+          this.router.navigate(['/login']);
+        },
+      });
   }
 
   getProductsFromCart(): void {

@@ -152,3 +152,8 @@ REST_FRAMEWORK = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CSRF_COOKIE_SAMESITE = 'None'      # cho phép cookie CSRF được gửi từ domain khác
+CSRF_COOKIE_SECURE = False         # (ở môi trường dev) nếu dùng HTTPS, đặt True
+SESSION_COOKIE_SAMESITE = 'None'   # tương tự cho session cookie
+SESSION_COOKIE_SECURE = False      # (ở môi trường dev) nếu dùng HTTPS, đặt True

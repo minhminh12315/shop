@@ -20,9 +20,23 @@ export class RegisterComponent {
 
   constructor(private router: Router, private http: HttpClient) {}
 
+  validateEmail(email: string): boolean {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  }
+
 
   onRegister() {
     this.error = '';
+    if (!this.username || !this.email || !this.password || !this.confirmPassword) {
+      this.error = 'Vui lòng điền đầy đủ thông tin!';
+      return;
+    }
+
+    if (!this.validateEmail(this.email)) {
+      this.error = 'Email không hợp lệ!';
+      return;
+    }
 
     if (this.password !== this.confirmPassword) {
       this.error = 'Mật khẩu không khớp!';

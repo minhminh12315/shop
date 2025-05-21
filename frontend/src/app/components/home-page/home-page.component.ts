@@ -40,7 +40,6 @@ export class HomePageComponent {
     this.productService.getProducts().subscribe({
       next: (data) => {
         this.products = data;
-        console.log('Danh sách sản phẩm:', data);
         this.loading = false;
       },
       error: (err) => {
@@ -55,7 +54,6 @@ export class HomePageComponent {
     this.imageService.getImages().subscribe({
       next: (data) => {
         this.images = data;
-        console.log('Danh sách hình ảnh:', data);
         this.loading = false;
       },
       error: (err) => {
@@ -70,7 +68,6 @@ export class HomePageComponent {
     this.categoryService.getCategories().subscribe({
       next: (data) => {
         this.categories = data;
-        console.log('Danh sách danh mục:', data);
         this.loading = false;
       },
       error: (err) => {
